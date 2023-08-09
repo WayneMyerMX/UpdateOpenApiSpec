@@ -1,0 +1,58 @@
+{
+    "paths": {
+        "/users": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "user":{"email":"email@provider.com","id":"My-Unique-ID","is_disabled":false,"metadata":"some metadata","type": "individual","status": "preferred"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}": {
+            "put": {
+                "parameters": [{
+                    "example": {
+                        "user":{"email":"email@provider.com","id":"My-Unique-ID","is_disabled":false,"metadata":"{\"first_name\": \"Steven\", \"last_name\": \"Universe\"}"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/taggings": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "tagging":{"tag_guid":"TAG-40faf068-abb4-405c-8f6a-e883ed541fff","transaction_guid":"TRN-810828b0-5210-4878-9bd3-f4ce514f90c4"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/taggings/{tagging_guid}": {
+            "put": {
+                "parameters": [{
+                    "example": {
+                        "tagging":{"tag_guid":"TAG-40faf068-abb4-405c-8f6a-e883ed541fff"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/tags": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "tag":{"name":"MY TAG"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/tags/{tag_guid}": {
+            "put": {
+                "parameters": [{
+                    "example": {
+                        "tag":{"name":"MY TAG"}
+                    }
+                }]
+            }
+        }
+    }
+}

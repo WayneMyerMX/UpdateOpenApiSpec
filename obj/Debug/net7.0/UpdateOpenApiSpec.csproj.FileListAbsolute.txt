@@ -1,0 +1,17 @@
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/bin/Debug/net7.0/UpdateOpenApiSpec
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/bin/Debug/net7.0/UpdateOpenApiSpec.deps.json
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/bin/Debug/net7.0/UpdateOpenApiSpec.runtimeconfig.json
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/bin/Debug/net7.0/UpdateOpenApiSpec.dll
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/bin/Debug/net7.0/UpdateOpenApiSpec.pdb
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/obj/Debug/net7.0/UpdateOpenApiSpec.csproj.AssemblyReference.cache
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/obj/Debug/net7.0/UpdateOpenApiSpec.GeneratedMSBuildEditorConfig.editorconfig
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/obj/Debug/net7.0/UpdateOpenApiSpec.AssemblyInfoInputs.cache
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/obj/Debug/net7.0/UpdateOpenApiSpec.AssemblyInfo.cs
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/obj/Debug/net7.0/UpdateOpenApiSpec.csproj.CoreCompileInputs.cache
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/obj/Debug/net7.0/UpdateOpenApiSpec.dll
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/obj/Debug/net7.0/refint/UpdateOpenApiSpec.dll
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/obj/Debug/net7.0/UpdateOpenApiSpec.pdb
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/obj/Debug/net7.0/UpdateOpenApiSpec.genruntimeconfig.cache
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/obj/Debug/net7.0/ref/UpdateOpenApiSpec.dll
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/obj/Debug/net7.0/UpdateOpenApiSpec.csproj.CopyComplete
