@@ -8,45 +8,34 @@ string updatesFileText;
 JObject insertionJObj;
 JObject oasFileObjects;
 
-//Open insertions file and read into string.
+// Open insertions file and read into string.
 using(StreamReader sw = new("/Users/wayne.myer/gitlab/UpdateOpenApi/UpdateOpenApiSpec/Insertions.json"))
 {
     updatesFileText = sw.ReadToEnd();
+
+    // Convert JSON string to JObbject.
     insertionJObj = JObject.Parse(updatesFileText);
     sw.Close();
 }
 
-//Open JSON file
+// Parse OpenAPI file that needs additional objects.
 using(StreamReader sw = new("/Users/wayne.myer/gitlab/harvey/openapi.json"))
 {
-    //Deserialize JSON into objects.
+    // Convert OAS into JObject.
     jsonFileText = sw.ReadToEnd();
     oasFileObjects = JObject.Parse(jsonFileText);
-    
-    //Example: find path, /users, post, parameters[], example
-    var example = insertionJObj.SelectToken("$.paths./users.post.parameters");
-    
-    //Get a JProperty at that path?
-
-    // var deleteMe = oasFileObjects.SelectToken("$.paths./users.post.parameters");
-        //from ex in oasFileObjects["paths"]["/users"]["post"]["parameters"].SelectMany(k =>)
-    
+       
+    // Merge new objects into OAS. Things will automagically go where there are supposed to go, 
+    // as long as the paths are the same.    
     oasFileObjects?.Merge(insertionJObj, new JsonMergeSettings
     {
         MergeArrayHandling = MergeArrayHandling.Union
     });
-    //Test write-out of OpenAPI JSON (success)
+
+    // Write out and close out
     using StreamWriter sw2 = new("testJson");
     string updatedJson = JsonConvert.SerializeObject(oasFileObjects, Formatting.Indented);
     sw2.Write(updatedJson);
     sw2.Flush();
     sw2.Close();
-
-
 }
-
-
-//open insertions file
-//find object
-
-//write out updated JSON file
