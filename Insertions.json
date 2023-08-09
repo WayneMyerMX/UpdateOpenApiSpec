@@ -53,6 +53,51 @@
                     }
                 }]
             }
+        },
+        "/users/{user_guid}/managed_members": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "member":{"id":"member123","institution_code":"mxbank","metadata":"some metadata","name":"MX Bank"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/managed_members/{member_guid}": {
+            "put": {
+                "parameters": [{
+                    "example": {
+                        "member":{"id":"member123","metadata":"some metadata","name":"MX Bank"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/members": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "client_redirect_url":"https://mx.com","enable_app2app":false,"member":{"background_aggregation_is_disabled":false,"credentials":[{"guid":"CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f","value":"password"}],"id":"unique_id","institution_code":"chase","is_oauth":false,"metadata":"\"credentials_last_refreshed_at\": \"2015-10-15\"","skip_aggregation":false},"referral_source":"APP","ui_message_webview_url_scheme":"mx"
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/members/{member_guid}": {
+            "put": {
+                "parameters": [{
+                    "example": {
+                        "member":{"background_aggregation_is_disabled":false,"credentials":[{"guid":"CRD-27d0edb8-1d50-5b90-bcbc-be270ca42b9f","value":"password"}],"id":"unique_id","metadata":"\"credentials_last_refreshed_at\": \"2015-10-15\"","skip_aggregation":false}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/members/{member_guid}/fetch_tax_documents": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        
+                    }
+                }]
+            }
         }
     }
 }
