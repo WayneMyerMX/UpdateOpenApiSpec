@@ -81,6 +81,33 @@
                 }]
             }
         },
+        "/users/{user_guid}/members/{member_guid}/aggregate": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        
+                    }
+                }]
+            }
+        },
+        "/authorization_code": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "authorization_code":{"scope":"user-guid:USR-101ad774-288b-44ed-ad16-da87d522ea20 member-guid:MBR-54feffb9-8474-47bd-8442-de003910113a account-guid:ACT-32a64160-582a-4f00-ab34-5f49cc35ed35 read-protected"}
+                    }
+                }]
+            }
+        },
+        "/payment_processor_authorization_code": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "payment_processor_authorization_code":{"account_guid":"ACT-4d4c0068-33bc-4d06-bbd6-cd270fd0135c","member_guid":"MBR-46637bc5-942d-4229-9370-ddd858bf805e","user_guid":"USR-f12b1f5a-7cbe-467c-aa30-0a10d0b2f549"}
+                    }
+                }]
+            }
+        },
         "/users/{user_guid}/members/{member_guid}": {
             "put": {
                 "parameters": [{
@@ -94,7 +121,133 @@
             "post": {
                 "parameters": [{
                     "example": {
+                        "transactions":[{"amount":21.33,"description":"ubr* pending.uber.com","extended_transaction_type":"partner_transaction_type","id":"ID-123","memo":"Additional-information*on_transaction","merchant_category_code":4121,"type":"DEBIT"}]
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "transaction":{"amount":61.11,"category":"Groceries","check_number_string":"6812","currency_code":"USD","description":"Whole foods","id":"transaction-265abee9-889b-af6a-c69b-25157db2bdd9","is_international":false,"latitude":-43.2075,"localized_description":"This is a localized_description","localized_memo":"This is a localized_memo","longitude":139.691706,"memo":"This is a memo","merchant_category_code":5411,"merchant_guid":"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b","merchant_location_guid":"MCL-00024e59-18b5-4d79-b879-2a7896726fea","metadata":"some metadata","posted_at":"2016-10-07T06:00:00.000Z","status":"POSTED","transacted_at":"2016-10-06T13:00:00.000Z","type":"DEBIT"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}/transactions/{transaction_guid}": {
+            "put": {
+                "parameters": [{
+                    "example": {
+                        "transaction":{"amount":61.11,"category":"Groceries","check_number_string":"6812","currency_code":"USD","description":"Whole foods","id":"transaction-265abee9-889b-af6a-c69b-25157db2bdd9","is_international":false,"latitude":-43.2075,"localized_description":"This is a localized_description","localized_memo":"This is a localized_memo","longitude":139.691706,"memo":"This is a memo","merchant_category_code":5411,"merchant_guid":"MCH-7ed79542-884d-2b1b-dd74-501c5cc9d25b","merchant_location_guid":"MCL-00024e59-18b5-4d79-b879-2a7896726fea","metadata":"some metadata","posted_at":"2016-10-07T06:00:00.000Z","status":"POSTED","transacted_at":"2016-10-06T13:00:00.000Z","type":"DEBIT"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/transaction_rules": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "transaction_rule":{"category_guid":"CAT-b1de2a04-db08-b6ed-f6fe-ca2f5b11c2d0","description":"Wal-mart food storage","match_description":"Wal-mart"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/transaction_rules/{transaction_rule_guid}": {
+            "put": {
+                "parameters": [{
+                    "example": {
+                        "transaction_rule":{"category_guid":"CAT-b1de2a04-db08-b6ed-f6fe-ca2f5b11c2d0","description":"Wal-mart food storage","match_description":"Wal-mart"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/transactions/{transaction_guid}": {
+            "put": {
+                "parameters": [{
+                    "example": {
+                        "transaction":{"description":"new description"}
+                    }
+                }]
+            }
+        },
+        "/transactions/enhance": {
+            "post": {
+                "parameters": [{
+                    "example": {
                         
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/accounts": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "account":{"account_subtype":"PERSONAL","account_type":"SAVINGS","apr":1,"apy":1,"available_balance":1000,"balance":1000,"cash_surrender_value":1000,"credit_limit":100,"currency_code":"USD","death_benefit":1000,"interest_rate":1,"is_business":false,"is_closed":false,"is_hidden":false,"loan_amount":1000,"metadata":"some metadata","name":"Test account 2","nickname":"Swiss Account","original_balance":10,"property_type":"VEHICLE","skip_webhook":true}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/managed_members/{member_guid}/accounts": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "account":{"account_number":"5366","apr":1,"apy":1,"available_balance":1000,"available_credit":1000,"balance":1000,"cash_surrender_value":1000,"credit_limit":100,"currency_code":"USD","day_payment_is_due":20,"death_benefit":1000,"id":"1040434698","interest_rate":1,"is_closed":false,"is_hidden":false,"last_payment":100,"last_payment_at":"2015-10-13T17:57:37.000Z","loan_amount":1000,"matures_on":"2015-10-13T17:57:37.000Z","metadata":"some metadata","minimum_balance":100,"minimum_payment":10,"name":"Test account 2","nickname":"Swiss Account","original_balance":10,"payment_due_at":"2015-10-13T17:57:37.000Z","payoff_balance":10,"routing_number":"68899990000000","started_on":"2015-10-13T17:57:37.000Z","subtype":"NONE","type":"SAVINGS"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/managed_members/{member_guid}/accounts/{account_guid}": {
+            "put": {
+                "parameters": [{
+                    "example": {
+                        "account":{"account_number":"5366","apr":1,"apy":1,"available_balance":1000,"available_credit":1000,"balance":1000,"cash_surrender_value":1000,"credit_limit":100,"currency_code":"USD","day_payment_is_due":20,"death_benefit":1000,"id":"1040434698","interest_rate":1,"is_closed":false,"is_hidden":false,"last_payment":100,"last_payment_at":"2015-10-13T17:57:37.000Z","loan_amount":1000,"matures_on":"2015-10-13T17:57:37.000Z","metadata":"some metadata","minimum_balance":100,"minimum_payment":10,"name":"Test account 2","nickname":"Swiss Account","original_balance":10,"payment_due_at":"2015-10-13T17:57:37.000Z","payoff_balance":10,"routing_number":"68899990000000","started_on":"2015-10-13T17:57:37.000Z","subtype":"NONE","type":"SAVINGS"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/members/{member_guid}/accounts/{account_guid}": {
+            "put": {
+                "parameters": [{
+                    "example": {
+                        "account":{"account_subtype":"PERSONAL","account_type":"SAVINGS","apr":1,"apy":1,"available_balance":1000,"balance":1000,"cash_surrender_value":1000,"credit_limit":100,"currency_code":"USD","death_benefit":1000,"interest_rate":1,"is_business":false,"is_closed":false,"is_hidden":false,"loan_amount":1000,"metadata":"some metadata","name":"Test account 2","nickname":"Swiss Account","original_balance":10,"property_type":"VEHICLE","skip_webhook":true}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/connect_widget_url": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "config":{"client_redirect_url":"https://mx.com","color_scheme":"light","current_institution_code":"chase","current_member_guid":"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b","disable_background_agg":false,"disable_institution_search":false,"include_identity":false,"include_transactions":true,"is_mobile_webview":false,"mode":"aggregation","oauth_referral_source":"BROWSER","ui_message_version":4,"ui_message_webview_url_scheme":"mx","update_credentials":false}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/widget_urls": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "widget_url":{"client_redirect_url":"https://mx.com","color_scheme":"light","current_institution_code":"chase","current_institution_guid":"INS-f1a3285d-e855-b61f-6aa7-8ae575c0e0e9","current_member_guid":"MBR-7c6f361b-e582-15b6-60c0-358f12466b4b","disable_background_agg":false,"disable_institution_search":false,"include_identity":false,"include_transactions":true,"is_mobile_webview":false,"mode":"aggregation","oauth_referral_source":"BROWSER","ui_message_version":4,"ui_message_webview_url_scheme":"mx","update_credentials":false,"widget_type":"connect_widget"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/categories": {
+            "post": {
+                "parameters": [{
+                    "example": {
+                        "category":{"metadata":"some metadata","name":"Online Shopping","parent_guid":"CAT-aad51b46-d6f7-3da5-fd6e-492328b3023f"}
+                    }
+                }]
+            }
+        },
+        "/users/{user_guid}/categories/{category_guid}": {
+            "put": {
+                "parameters": [{
+                    "example": {
+                        "category":{"metadata":"some metadata","name":"Web shopping"}
                     }
                 }]
             }
