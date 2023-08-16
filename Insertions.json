@@ -214,6 +214,119 @@
                         "account":{"account_subtype":"PERSONAL","account_type":"SAVINGS","apr":1,"apy":1,"available_balance":1000,"balance":1000,"cash_surrender_value":1000,"credit_limit":100,"currency_code":"USD","death_benefit":1000,"interest_rate":1,"is_business":false,"is_closed":false,"is_hidden":false,"loan_amount":1000,"metadata":"some metadata","name":"Test account 2","nickname":"Swiss Account","original_balance":10,"property_type":"VEHICLE","skip_webhook":true}
                     }
                 }]
+            },
+            "get": {
+                "tags": [
+                  "Accounts"
+                ],
+                "operationId": "Accounts-show",
+                "parameters": [
+                  {
+                    "name": "user_guid",
+                    "description": "Scope response to user_guid",
+                    "required": true,
+                    "in": "path",
+                    "schema": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "name": "member_guid",
+                    "description": "Scope response to member_guid",
+                    "required": true,
+                    "in": "path",
+                    "schema": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "name": "account_guid",
+                    "description": "Scope response to account_guid",
+                    "required": true,
+                    "in": "path",
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ],
+                "responses": {
+                  "default": {
+                    "description": "",
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/Account"
+                        },
+                        "example": {
+                          "account": {
+                            "account_number": "5366",
+                            "account_ownership": "INDIVIDUAL",
+                            "annuity_policy_to_date": "2016-10-13T17:57:37.000Z",
+                            "annuity_provider": "Metlife",
+                            "annuity_term_year": 2048,
+                            "apr": 1,
+                            "apy": 1,
+                            "available_balance": 1000,
+                            "available_credit": 1000,
+                            "balance": 10000,
+                            "cash_balance": 1000,
+                            "cash_surrender_value": 1000,
+                            "created_at": "2023-07-25T17:14:46Z",
+                            "credit_limit": 100,
+                            "currency_code": "USD",
+                            "day_payment_is_due": 20,
+                            "death_benefit": 1000,
+                            "guid": "ACT-06d7f44b-caae-0f6e-1384-01f52e75dcb1",
+                            "holdings_value": 1000,
+                            "id": "1040434698",
+                            "imported_at": "2015-10-13T17:57:37.000Z",
+                            "interest_rate": 1,
+                            "institution_code": "3af3685e-05d9-7060-359f-008d0755e993",
+                            "insured_name": "Tommy Shelby",
+                            "is_closed": false,
+                            "is_hidden": false,
+                            "is_manual": false,
+                            "last_payment": 100,
+                            "last_payment_at": "2023-07-25T17:14:46Z",
+                            "loan_amount": 1000,
+                            "margin_balance": 1000,
+                            "matures_on": "2015-10-13T17:57:37.000Z",
+                            "member_guid": "MBR-7c6f361b-e582-15b6-60c0-358f12466b4b",
+                            "member_id": "member123",
+                            "member_is_managed_by_user": false,
+                            "metadata": "some metadata",
+                            "minimum_balance": 100,
+                            "minimum_payment": 10,
+                            "name": "Test account 2",
+                            "nickname": "My Checking",
+                            "original_balance": 10,
+                            "pay_out_amount": 10,
+                            "payment_due_at": "2015-10-13T17:57:37.000Z",
+                            "payoff_balance": 10,
+                            "premium_amount": 1,
+                            "property_type": "VEHICLE",
+                            "routing_number": "68899990000000",
+                            "skip_webhook": true,
+                            "started_on": "2015-10-13T17:57:37.000Z",
+                            "subtype": "NONE",
+                            "today_ugl_amount": 1000.5,
+                            "today_ugl_percentage": 6.9,
+                            "total_account_value": 1,
+                            "type": "SAVINGS",
+                            "updated_at": "2016-10-13T18:08:00.000Z",
+                            "user_guid": "USR-fa7537f3-48aa-a683-a02a-b18940482f54",
+                            "user_id": "user123"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "200": {
+                    "description": "Request succeeded."
+                  }
+                },
+                "description": "This endpoint returns the specified `account` resource.",
+                "summary": "This endpoint returns the specified `account` resource."
             }
         },
         "/users/{user_guid}/connect_widget_url": {
@@ -251,6 +364,6 @@
                     }
                 }]
             }
-        }
+        }        
     }
 }
